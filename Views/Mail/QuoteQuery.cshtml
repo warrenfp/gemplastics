@@ -1,0 +1,144 @@
+﻿@model Gemplastics.Views.Mail.QuoteQueryModel
+@{
+    ViewBag.Title = "QuoteQuery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="contentBody">
+    <h3>
+        Quote / Query</h3>
+    <form method="POST" action="/mail/send">
+    <div style="overflow-y: scroll; height: 200px">
+        @{
+            if (Model.Error != null)
+            {
+                <label class="error">@Model.Error</label>
+                <br />
+                <br />
+            }
+        }
+        <table>
+            <tr>
+                <td>
+                    Contact Person *
+                </td>
+                <td>@Html.TextBoxFor(t => t.Person)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email Address *
+                </td>
+                <td>@Html.TextBoxFor(t => t.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Telephone Number *
+                </td>
+                <td>@Html.TextBoxFor(t => t.Tel)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Query *
+                </td>
+                <td>@Html.TextAreaFor(t => t.Query, 4, 40, null)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Request Details (non mandatory)
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Width
+                </td>
+                <td>@Html.TextBoxFor(t => t.Width)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Length
+                </td>
+                <td>@Html.TextBoxFor(t => t.Length)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Microns(thickness)
+                </td>
+                <td>@Html.TextBoxFor(t => t.Microns)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Color of plastic
+                </td>
+                <td>@Html.TextBoxFor(t => t.PlasticColor)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Print Color 1
+                </td>
+                <td>@Html.TextBoxFor(t => t.Color1)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Print Color 2
+                </td>
+                <td>@Html.TextBoxFor(t => t.Color2)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Print Color 3
+                </td>
+                <td>@Html.TextBoxFor(t => t.Color3)
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="Send Request" />
+        <br />
+        <br />
+    </div>
+    </form>
+</div>
